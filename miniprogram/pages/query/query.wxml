@@ -1,0 +1,4 @@
+<!--miniprogram/pages/query/query.wxml-->
+<web-view src="https://www.zhihu.com/signin?next=%2F"></web-view>
+<!-- <web-view src="http://wx.tj720.com/appoint/#/query?u=6FE34ED2507A8596703960355EF185B3"></web-view> -->
+

@@ -1,2 +1,4 @@
 <!--index.wxml-->
-<web-view src="http://wx.tj720.com/appoint/#/home/"></web-view>
+<!-- <text>23434</text> -->
+<web-view src="https://www.baidu.com/"></web-view>
+<!-- <web-view src="http://wx.tj720.com/appoint/#/home/"></web-view> -->

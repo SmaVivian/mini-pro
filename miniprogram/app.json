@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/query/query"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -8,6 +9,22 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "vivi的小程序",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#353535",
+    "selectedColor": "#00c274",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "预约"
+      },
+      {
+        "pagePath": "pages/query/query",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap65.json"
