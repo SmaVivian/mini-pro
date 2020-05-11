@@ -1,13 +1,16 @@
 /**index.wxss**/
+
 /* page {
   background: #f6f6f6;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 } */
+
 .header-add {
   padding: 0 20rpx;
 }
+
 .header-add .box {
   padding: 0 20rpx;
   background-color: #06ad56;
@@ -21,6 +24,7 @@
   margin-right: 20rpx;
   float: right;
 }
+
 .header-banner {
   padding: 20rpx;
   margin: 20px 0;
@@ -28,50 +32,54 @@
   justify-content: space-between;
   background: #fff;
 }
+
 .header-banner .top-pic {
   width: 160rpx;
   height: 160rpx;
   border-radius: 100%;
 }
+
 .header-banner .left {
   display: flex;
   align-items: center;
+  .info {
+    margin-left: 20rpx;
+    line-height: 50rpx;
+  }
+  .info-name {
+    font-size: 36rpx;
+  }
+  .info-loc {
+    color: #06ad56;
+  }
 }
-.header-banner .left .info {
-  margin-left: 20rpx;
-  line-height: 50rpx;
-}
-.header-banner .left .info-name {
-  font-size: 36rpx;
-}
-.header-banner .left .info-loc {
-  color: #06ad56;
-}
+
 .header-banner .right {
   width: 200rpx;
   display: flex;
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+  }
+  .item.fans {
+    margin-right: 30rpx;
+  }
+  text {
+    font-size: 50rpx;
+    font-weight: bold;
+    color: brown;
+  }
+  image {
+    width: 50rpx;
+    height: 50rpx;
+    margin-bottom: 10rpx;
+  }
 }
-.header-banner .right .item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #999;
-}
-.header-banner .right .item.fans {
-  margin-right: 30rpx;
-}
-.header-banner .right text {
-  font-size: 50rpx;
-  font-weight: bold;
-  color: brown;
-}
-.header-banner .right image {
-  width: 50rpx;
-  height: 50rpx;
-  margin-bottom: 10rpx;
-}
-.swiper-item {
+
+.swiper-item{
   display: block;
   height: 150px;
 }
