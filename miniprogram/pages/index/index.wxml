@@ -1,4 +1,46 @@
 <!--index.wxml-->
-<!-- <text>23434</text> -->
-<web-view src="https://www.baidu.com/"></web-view>
-<!-- <web-view src="http://wx.tj720.com/appoint/#/home/"></web-view> -->
+<view class="container">
+  <!-- <button type="primary" style="display:block;">添加薇团购到我的小程序</button> -->
+  
+  <view class="page-body">
+    <view class="page-section header-add">
+      <view class="box">
+        添加薇团购到我的小程序
+        <text class="btn-add">去添加 ></text>
+      </view>
+    </view>
+
+    <view class="page-section header-banner">
+      <view class="left">
+        <image class="top-pic" src="{{avatarUrl}}"></image>
+        <view class="info">
+          <text class="info-name">青春活力</text>
+          <navigator class="info-loc">地址</navigator>
+        </view>
+      </view>
+      
+      <view class="right">
+        <navigator class="item fans"><text>72</text>粉丝</navigator>
+        <navigator class="item"><image src="{{avatarUrl}}"></image> 分享</navigator>
+      </view>
+    </view>
+
+    <view class="page-section swiper">
+      <!-- <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular> -->
+      <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#fff" 
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperList}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- <button 
+      type="primary"
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+    >授权</button> -->
+  </view>
+</view>

@@ -4,10 +4,24 @@ const app = getApp()
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
+
+    swiperList: ['https://docs-1255840532.cos.ap-shanghai.myqcloud.com/3968.jpg'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500,
+
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: ''
+  },
+
+  changeIndicatorDots() {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
   },
 
   onLoad: function() {
@@ -34,9 +48,28 @@ Page({
         }
       }
     })
+
+    this.getDataList()
+  },
+
+  getDataList() {
+    wx.request({
+      url: 'http://wx.tj720.com/admin/AppointOrder/areaList.do', //仅为示例，并非真实的接口地址
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success (res) {
+        console.log(12,res.data)
+      }
+    })
   },
 
   onGetUserInfo: function(e) {
+    console.log(11,e)
     if (!this.data.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
