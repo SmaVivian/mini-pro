@@ -1,16 +1,11 @@
 /**index.wxss**/
-/* page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-} */
+@import "./../common/mixin.less";
 
-.header-add {
+.section-header-add {
   padding: 0 20rpx;
 }
 
-.header-add .box {
+.section-header-add .header-add-box {
   padding: 0 20rpx;
   background-color: #06ad56;
   height: 80rpx;
@@ -19,12 +14,12 @@
   border-radius: 50rpx;
   font-size: 32rpx;
 }
-.header-add .btn-add {
+.section-header-add .btn-add {
   margin-right: 20rpx;
   float: right;
 }
 
-.header-banner {
+.section-header-banner {
   padding: 20rpx;
   margin: 20px 0;
   display: flex;
@@ -32,13 +27,13 @@
   background: #fff;
 }
 
-.header-banner .top-pic {
+.section-header-banner .top-pic {
   width: 160rpx;
   height: 160rpx;
   border-radius: 100%;
 }
 
-.header-banner .left {
+.section-header-banner .left {
   display: flex;
   align-items: center;
   .info {
@@ -53,7 +48,7 @@
   }
 }
 
-.header-banner .right {
+.section-header-banner .right {
   width: 200rpx;
   display: flex;
   .item {
@@ -78,7 +73,22 @@
   }
 }
 
-.swiper-item{
-  display: block;
-  height: 150px;
+.section-swiper {
+  .swiper-item{
+    display: block;
+    height: 150px;
+  }
+}
+
+.section-group {
+  font-size: 40rpx;
+  font-weight: bold;
+  .group-desc {
+    font-size: 24rpx;
+    color: #999;
+  }
+  .group-time {
+    font-size: 30rpx;
+    color: @success;
+  }
 }

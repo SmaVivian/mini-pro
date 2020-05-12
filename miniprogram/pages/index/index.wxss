@@ -1,14 +1,11 @@
 /**index.wxss**/
-/* page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-} */
-.header-add {
+.m-shadow {
+  box-shadow: 0px 3px 10px 0px rgba(173, 179, 191, 0.3);
+}
+.section-header-add {
   padding: 0 20rpx;
 }
-.header-add .box {
+.section-header-add .header-add-box {
   padding: 0 20rpx;
   background-color: #06ad56;
   height: 80rpx;
@@ -17,61 +14,73 @@
   border-radius: 50rpx;
   font-size: 32rpx;
 }
-.header-add .btn-add {
+.section-header-add .btn-add {
   margin-right: 20rpx;
   float: right;
 }
-.header-banner {
+.section-header-banner {
   padding: 20rpx;
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
   background: #fff;
 }
-.header-banner .top-pic {
+.section-header-banner .top-pic {
   width: 160rpx;
   height: 160rpx;
   border-radius: 100%;
 }
-.header-banner .left {
+.section-header-banner .left {
   display: flex;
   align-items: center;
 }
-.header-banner .left .info {
+.section-header-banner .left .info {
   margin-left: 20rpx;
   line-height: 50rpx;
 }
-.header-banner .left .info-name {
+.section-header-banner .left .info-name {
   font-size: 36rpx;
 }
-.header-banner .left .info-loc {
+.section-header-banner .left .info-loc {
   color: #06ad56;
 }
-.header-banner .right {
+.section-header-banner .right {
   width: 200rpx;
   display: flex;
 }
-.header-banner .right .item {
+.section-header-banner .right .item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #999;
 }
-.header-banner .right .item.fans {
+.section-header-banner .right .item.fans {
   margin-right: 30rpx;
 }
-.header-banner .right text {
+.section-header-banner .right text {
   font-size: 50rpx;
   font-weight: bold;
   color: brown;
 }
-.header-banner .right image {
+.section-header-banner .right image {
   width: 50rpx;
   height: 50rpx;
   margin-bottom: 10rpx;
 }
-.swiper-item {
+.section-swiper .swiper-item {
   display: block;
   height: 150px;
+}
+.section-group {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.section-group .group-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+.section-group .group-time {
+  font-size: 30rpx;
+  color: #63ddbf;
 }

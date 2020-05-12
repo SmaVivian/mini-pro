@@ -3,14 +3,14 @@
 	<!-- <button type="primary" style="display:block;">添加薇团购到我的小程序</button> -->
 
 	<view class="page-body">
-		<view class="page-section header-add">
-			<view class="box">
+		<view class="section section-header-add">
+			<view class="header-add-box">
 				添加薇团购到我的小程序
 				<text class="btn-add">去添加 ></text>
 			</view>
 		</view>
 
-		<view class="page-section header-banner">
+		<view class="section section-header-banner">
 			<view class="left">
 				<image class="top-pic" src="{{avatarUrl}}" />
 				<view class="info">
@@ -31,7 +31,7 @@
 			</view>
 		</view>
 
-		<view class="page-section swiper">
+		<view class="section section-swiper">
 			<!-- <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular> -->
 			<swiper
 			 indicator-dots="{{indicatorDots}}"
@@ -46,6 +46,12 @@
 					</swiper-item>
 				</block>
 			</swiper>
+		</view>
+
+		<view class="section section-group">
+			今日团购
+			<text class="group-desc ml-10">聚结束</text>
+			<text class="group-time ml-10">04:06:04</text>
 		</view>
 
 		<view>
