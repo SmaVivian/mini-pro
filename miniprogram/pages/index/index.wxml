@@ -76,52 +76,58 @@
 
 				<view class="tab-list">
 					<view class="list-item" wx:for="{{dataList}}">
-						<image class="pic" src="/images/pic.jpg" />
-						<view class="list-item-desc">
-							<text class="it-title">海南 火龙果1个海南 火龙果1个</text>
-							<view class="it-operate">
-								<view class="price-box">
-									<view class="tag">
-										<view class="weui-badge">次日达</view>
-										<!-- <text>次日达</text> -->
+						<block wx:if="{{index === 0 || index === 2}}">
+							<!-- src="http://sdk.tj720.com/files/CulturalSpot/20200326/e6f9ec0a-cc42-44ee-8bc8-a57fdfdf5196.jpg" -->
+							<image
+							 src="/images/video.jpg"
+							 style="display: {{ activeVideoIndex == index ? 'none' : 'block' }};"
+							 bindtap="videoPlay"
+							 data-id="{{index}}"
+							 class="list-item-video"
+							/>
+							<video
+							 class="list-item-video"
+							 src="https://www.runoob.com/try/demo_source/mov_bbb.mp4"
+							 controls
+							 show-center-play-btn="{{false}}"
+							 wx:if="{{activeVideoIndex == index}}"
+							 id="myVideo{{index}}"
+							/>
+							<!-- <video class="list-item-video" controls src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" /> -->
+						</block>
+
+						<block wx:else>
+							<image class="pic" src="/images/pic.jpg" />
+							<view class="list-item-desc">
+								<text class="it-title">海南 火龙果1个海南 火龙果1个</text>
+								<view class="it-operate">
+									<view class="price-box">
+										<view class="tag">
+											<view class="weui-badge">次日达</view>
+											<!-- <text>次日达</text> -->
+										</view>
+										<view class="price">
+											<text class="pri">¥</text>
+											<text class="pri-val">5.99</text>
+										</view>
+										<text class="price-old">¥3.99</text>
 									</view>
-									<view class="price">
-										<text class="pri">¥</text>
-										<text class="pri-val">5.99</text>
+									<view class="count-box">
+										<!-- <button>-</button> -->
+										<text class="count">{{index+1}}</text>
+										<!-- <button>+</button> -->
 									</view>
-									<text class="price-old">¥3.99</text>
-								</view>
-								<view class="count-box">
-									<!-- <button>-</button> -->
-									<text class="count">{{index+1}}</text>
-									<!-- <button>+</button> -->
 								</view>
 							</view>
-						</view>
+						</block>
 					</view>
 				</view>
-
-				<!-- <view hidden="{{isTotal ? false : true}}" class="weui-loadmore weui-loadmore_line" style='margin-top:60rpx;margin-bottom:30rpx;'>
-					<view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多啦</view>
-				</view> -->
 
 				<view class="weui-loadmore weui-loadmore_line" hidden="{{isTotal ? false : true}}">
 					<view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="background:#f9f9f9;">没有更多啦</view>
 				</view>
 			</view>
 		</view>
-		<!-- <view>
-			<label class="checkbox">
-				<checkbox value="cb" checked="true" />
-				选中
-			</label>
-		</view> -->
-
-		<!-- <button 
-      type="primary"
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-    >授权</button> -->
 	</view>
 </view>
 

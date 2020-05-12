@@ -129,6 +129,10 @@
   margin-bottom: 20rpx;
   border-radius: 5rpx;
 }
+.section-tab-list .tab-list .list-item .list-item-video {
+  width: 100%;
+  height: 300rpx;
+}
 .section-tab-list .tab-list .list-item .pic {
   margin-top: 8rpx;
   width: 280rpx;

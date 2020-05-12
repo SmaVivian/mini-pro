@@ -68,10 +68,29 @@ Page({
     dataList: [],
     isTotal: false,
 
+    activeVideoIndex: null, // 显示的视频
+
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: ''
+  },
+
+  // 点击播放视频
+  videoPlay(e){
+    var _index = e.currentTarget.dataset.id
+    this.setData({
+      activeVideoIndex: _index
+    })
+    console.log(this.data.activeVideoIndex)
+
+    //停止正在播放的视频
+    this.videoContext && this.videoContext.stop()
+    setTimeout(() => {
+      //将点击视频进行播放
+      this.videoContext = wx.createVideoContext('myVideo' + this.data.activeVideoIndex)
+      this.videoContext.play()
+    }, 500)
   },
 
   changeIndicatorDots() {
@@ -124,6 +143,7 @@ Page({
   clearCache() {
     page = 1
     this.setData({
+      activeVideoIndex: null, // 显示的视频
       dataList: []
     })
   },
