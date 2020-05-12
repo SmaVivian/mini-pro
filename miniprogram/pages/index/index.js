@@ -1,6 +1,6 @@
 //index.js
 const app = getApp()
-
+var page = 1
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -11,6 +11,62 @@ Page({
     autoplay: false,
     interval: 2000,
     duration: 500,
+
+    typeList: [
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '1'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '时令水果',
+        value: '2'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '水产冻品',
+        value: '3'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '4'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '5'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '6'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '7'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '8'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '9'
+      },
+      {
+        picUrl: '/images/type-1.jpg',
+        name: '新鲜蔬菜',
+        value: '10'
+      },
+    ],
+
+    dataList: [],
+    isTotal: false,
 
     userInfo: {},
     logged: false,
@@ -49,23 +105,99 @@ Page({
       }
     })
 
-    this.getDataList()
+    // this.clearCache() //清本页缓存
+    this.getDataList(true)
   },
 
-  getDataList() {
+  // 监听下拉刷新
+  onPullDownRefresh() {
+    this.clearCache()
+    this.getDataList(true) //第一次加载数据
+    wx.stopPullDownRefresh()  // 停止当前页面的下拉刷新
+  },
+
+  // 页面上拉触底事件（上拉加载更多）
+  onReachBottom: function () {
+    this.getDataList();//后台获取新数据并追加渲染
+  },
+
+  clearCache() {
+    page = 1
+    this.setData({
+      dataList: []
+    })
+  },
+
+  /**
+   * 获取数据
+   * @param {int} pg  分页标识 默认0
+   */
+  getDataList(isFirst) {
+    // 标题栏显示刷新图标，转圈圈
+    // wx.showNavigationBarLoading()
+    // wx.showLoading({
+    //   title: '玩命加载中',
+    // })
+    // wx.showToast({
+    //   title: '1',
+    // })
+    wx.showLoading({
+      "mask": true
+    })
     wx.request({
-      url: 'http://wx.tj720.com/admin/AppointOrder/areaList.do', //仅为示例，并非真实的接口地址
+      // url: 'http://bjmuseum.org.cn/admin/article/getArticleListByUniqueType.do', //仅为示例，并非真实的接口地址
+      url: 'http://wx.tj720.com/admin/AppointOrder/museumList.do', //仅为示例，并非真实的接口地址
       data: {
-        x: '',
-        y: ''
+        currentPage: isFirst ? 1 : page,
+        size: 6,
+        // uniqueName: 'xslw'
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success (res) {
-        console.log(12,res.data)
+      success: (res) => {
+        wx.hideLoading()
+        res = res.data
+        if (res.success == 1) {//成功
+          // 这一步实现了上拉加载更多
+          this.setData({
+            dataList: this.data.dataList.concat(res.data)
+          })
+          console.log(123,this.data.dataList)
+          if(page <= res.page.totalPage) {
+            page++
+            this.setData({
+              isTotal: false
+            })
+          } else {
+            this.setData({
+              isTotal: true
+            })
+          }
+        } else {//失败
+            console.log(res)
+        }
+      },
+      fail: (res) => {
+        wx.hideLoading()
+      },
+      complete: (res)=> {
+        
       }
     })
+    // wx.request({
+    //   url: 'http://wx.tj720.com/admin/AppointOrder/areaList.do', //仅为示例，并非真实的接口地址
+    //   data: {
+    //     x: '',
+    //     y: ''
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success (res) {
+    //     console.log(12,res.data)
+    //   }
+    // })
   },
 
   onGetUserInfo: function(e) {

@@ -31,35 +31,91 @@
 			</view>
 		</view>
 
-		<view class="section section-swiper">
-			<!-- <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular> -->
-			<swiper
-			 indicator-dots="{{indicatorDots}}"
-			 indicator-active-color="#fff"
-			 autoplay="{{autoplay}}"
-			 interval="{{interval}}"
-			 duration="{{duration}}"
-			>
-				<block wx:for="{{swiperList}}" wx:key="*this">
-					<swiper-item>
-						<image src="{{item}}" />
-					</swiper-item>
-				</block>
-			</swiper>
-		</view>
+		<view class="section-container">
+			<view class="section section-swiper hide">
+				<!-- <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular> -->
+				<swiper
+				 indicator-dots="{{indicatorDots}}"
+				 indicator-active-color="#fff"
+				 autoplay="{{autoplay}}"
+				 interval="{{interval}}"
+				 duration="{{duration}}"
+				>
+					<block wx:for="{{swiperList}}" wx:key="*this">
+						<swiper-item>
+							<image src="{{item}}" />
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
 
-		<view class="section section-group">
-			今日团购
-			<text class="group-desc ml-10">聚结束</text>
-			<text class="group-time ml-10">04:06:04</text>
-		</view>
+			<view class="section section-group">
+				今日团购
+				<text class="group-desc ml-10">聚结束</text>
+				<text class="group-time ml-10">04:06:04</text>
+			</view>
 
-		<view>
+			<view class="section section-types">
+				<view class="types-item mb-10" wx:for="{{typeList}}">
+					<!-- <image src="/images/type-1.jpg" /> -->
+					<image src="{{item.picUrl}}" />
+					<text>{{item.name}}</text>
+				</view>
+			</view>
+
+			<view class="section section-sec-kill">
+				限时秒杀
+			</view>
+
+			<view class="section section-tab-list">
+				<view class="tab-name">
+					<text class="active">热卖</text>
+					<text>包邮到家</text>
+					<text>惠享生活</text>
+				</view>
+
+				<view class="tab-list">
+					<view class="list-item" wx:for="{{dataList}}">
+						<image class="pic" src="/images/pic.jpg" />
+						<view class="list-item-desc">
+							<text class="it-title">海南 火龙果1个海南 火龙果1个</text>
+							<view class="it-operate">
+								<view class="price-box">
+									<view class="tag">
+										<view class="weui-badge">次日达</view>
+										<!-- <text>次日达</text> -->
+									</view>
+									<view class="price">
+										<text class="pri">¥</text>
+										<text class="pri-val">5.99</text>
+									</view>
+									<text class="price-old">¥3.99</text>
+								</view>
+								<view class="count-box">
+									<!-- <button>-</button> -->
+									<text class="count">{{index+1}}</text>
+									<!-- <button>+</button> -->
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+
+				<!-- <view hidden="{{isTotal ? false : true}}" class="weui-loadmore weui-loadmore_line" style='margin-top:60rpx;margin-bottom:30rpx;'>
+					<view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多啦</view>
+				</view> -->
+
+				<view class="weui-loadmore weui-loadmore_line" hidden="{{isTotal ? false : true}}">
+					<view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="background:#f9f9f9;">没有更多啦</view>
+				</view>
+			</view>
+		</view>
+		<!-- <view>
 			<label class="checkbox">
 				<checkbox value="cb" checked="true" />
 				选中
 			</label>
-		</view>
+		</view> -->
 
 		<!-- <button 
       type="primary"

@@ -13,6 +13,14 @@ page {
   font-size: 32rpx;
 }
 
+.hide {
+  display: none;
+}
+
+.tc {
+  text-align: center;
+}
+
 .mr-10 {
   margin-right: 10rpx;
 }

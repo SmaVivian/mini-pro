@@ -73,6 +73,10 @@
   }
 }
 
+.section-container {
+  padding: 0 20rpx;
+}
+
 .section-swiper {
   .swiper-item{
     display: block;
@@ -89,6 +93,111 @@
   }
   .group-time {
     font-size: 30rpx;
-    color: @success;
+    color: @error;
+  }
+}
+
+.section-types {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 10rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+  .types-item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: @fontMini;
+    image {
+      width: 100rpx;
+      height: 100rpx;
+      border-radius: 20rpx;
+      margin: 10rpx 0;
+    }
+  }
+}
+
+.section-tab-list {
+  .tab-name {
+    font-size: @fontTitleBig;
+    color: @colorTitle;
+    background: @colorGrayBase;
+    line-height: 100rpx;
+    display: flex;
+    justify-content: space-around;
+    text {
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+  .tab-list {
+    .list-item {
+      padding: 10rpx;
+      display: flex;
+      background: #fff;
+      margin-bottom: 20rpx;
+      border-radius: 5rpx;
+      .pic {
+        margin-top: 8rpx;
+        width: 280rpx;
+        height: 300rpx;
+      } 
+      .list-item-desc {
+        padding: 0 20rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .it-title {
+          font-size: @fontTitle;
+          font-weight: bold;
+          color: @fontTitle;
+          height: 100rpx;
+        }
+        .it-operate {
+          display: flex;
+          justify-content: space-between;
+          .price-box {
+            display: flex;
+            flex-direction: column;
+            .tag {
+              // text {
+              //   background: @error;
+              //   color: #fff;
+              //   font-size: @fontMini;
+              //   padding: 0 10rpx;
+              //   display: inline-block;
+              //   border-radius: 40rpx;
+              // }
+            }
+            .price {
+              color: @error;
+              font-weight: bold;
+              .pri {
+                font-size: @fontTitle;
+              }
+              .pri-val {
+                font-size: @fontTitleMax;
+              }
+            }
+            .price-old {
+              font-size: @fontMini;
+              color: @colorAssist;
+            }
+          }
+          .count-box {
+            display: flex;
+            align-items: center;
+            .count {
+              color: @colorMain;
+              font-size: @fontMain;
+              // margin: 0 20rpx;
+            }
+          }
+        }
+      }
+    }
   }
 }
