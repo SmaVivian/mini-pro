@@ -123,11 +123,18 @@
   font-weight: bold;
 }
 .section-tab-list .tab-list .list-item {
+  position: relative;
   padding: 10rpx;
   display: flex;
   background: #fff;
   margin-bottom: 20rpx;
   border-radius: 5rpx;
+}
+.section-tab-list .tab-list .list-item .icon-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .section-tab-list .tab-list .list-item .list-item-video {
   width: 100%;

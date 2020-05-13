@@ -74,16 +74,28 @@
 					<text>惠享生活</text>
 				</view>
 
+				<!-- <mp-icon type="field" icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}"></mp-icon> -->
+
 				<view class="tab-list">
 					<view class="list-item" wx:for="{{dataList}}">
 						<block wx:if="{{index === 0 || index === 2}}">
 							<!-- src="http://sdk.tj720.com/files/CulturalSpot/20200326/e6f9ec0a-cc42-44ee-8bc8-a57fdfdf5196.jpg" -->
 							<image
-							 src="/images/video.jpg"
+							 src="/images/1.jpg"
 							 style="display: {{ activeVideoIndex == index ? 'none' : 'block' }};"
 							 bindtap="videoPlay"
 							 data-id="{{index}}"
 							 class="list-item-video"
+							 mode="aspectFill"
+							/>
+							<mp-icon
+							 class="icon-play"
+							 icon="play2"
+							 color="#3d3c3ce1"
+							 size="{{50}}"
+							 style="display: {{ activeVideoIndex == index ? 'none' : 'block' }};"
+							 bindtap="videoPlay"
+							 data-id="{{index}}"
 							/>
 							<video
 							 class="list-item-video"
@@ -97,7 +109,7 @@
 						</block>
 
 						<block wx:else>
-							<image class="pic" src="/images/pic.jpg" />
+							<image class="pic" src="/images/pic.jpg" mode="aspectFill" />
 							<view class="list-item-desc">
 								<text class="it-title">海南 火龙果1个海南 火龙果1个</text>
 								<view class="it-operate">
