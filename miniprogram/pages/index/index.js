@@ -76,6 +76,14 @@ Page({
     requestResult: ''
   },
 
+  handleShop() {
+    // console.log(1)
+    wx.setTabBarBadge({
+      index: 2,
+      text: '2'
+    })
+  },
+
   // 点击播放视频
   videoPlay(e){
     var _index = e.currentTarget.dataset.id

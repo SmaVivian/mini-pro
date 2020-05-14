@@ -126,7 +126,7 @@
 									</view>
 									<view class="count-box">
 										<!-- <button>-</button> -->
-										<text class="count">{{index+1}}</text>
+										<text class="count" bindtap="handleShop">{{index+1}}</text>
 										<!-- <button>+</button> -->
 									</view>
 								</view>

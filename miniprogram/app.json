@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/query/query",
-    "pages/picker/picker"
+    "pages/picker/picker",
+    "pages/shop/shop",
+    "pages/category/category"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -21,10 +23,26 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "预约"
+        "iconPath": "images/icon-bar-1.png",
+        "selectedIconPath": "images/icon-bar-1-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon-bar-2.png",
+        "selectedIconPath": "images/icon-bar-2-active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "iconPath": "images/icon-bar-3.png",
+        "selectedIconPath": "images/icon-bar-3-active.png",
+        "text": "购物车"
       },
       {
         "pagePath": "pages/picker/picker",
+        "iconPath": "images/icon-bar-4.png",
+        "selectedIconPath": "images/icon-bar-4-active.png",
         "text": "我的"
       }
     ]
