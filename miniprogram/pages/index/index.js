@@ -2,6 +2,10 @@
 const app = getApp()
 var page = 1
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
     avatarUrl: './user-unlogin.png',
 
@@ -65,6 +69,22 @@ Page({
       },
     ],
 
+    scrollTop: null,
+    tabActive: '1',
+    tabList: [
+      {
+        text: '热卖',
+        value: '1'
+      },
+      {
+        text: '包邮到家',
+        value: '2'
+      },
+      {
+        text: '惠享生活',
+        value: '3'
+      },
+    ],
     dataList: [],
     isTotal: false,
 
@@ -75,39 +95,10 @@ Page({
     takeSession: false,
     requestResult: ''
   },
-
-  handleShop() {
-    // console.log(1)
-    wx.setTabBarBadge({
-      index: 2,
-      text: '2'
-    })
-  },
-
-  // 点击播放视频
-  videoPlay(e){
-    var _index = e.currentTarget.dataset.id
-    this.setData({
-      activeVideoIndex: _index
-    })
-    console.log(this.data.activeVideoIndex)
-
-    //停止正在播放的视频
-    this.videoContext && this.videoContext.stop()
-    setTimeout(() => {
-      //将点击视频进行播放
-      this.videoContext = wx.createVideoContext('myVideo' + this.data.activeVideoIndex)
-      this.videoContext.play()
-    }, 500)
-  },
-
-  changeIndicatorDots() {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-
-  onLoad: function() {
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -136,16 +127,110 @@ Page({
     this.getDataList(true)
   },
 
-  // 监听下拉刷新
-  onPullDownRefresh() {
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
     this.clearCache()
     this.getDataList(true) //第一次加载数据
     wx.stopPullDownRefresh()  // 停止当前页面的下拉刷新
   },
 
-  // 页面上拉触底事件（上拉加载更多）
+  /**
+   * 页面上拉触底事件的处理函数
+   */
   onReachBottom: function () {
     this.getDataList();//后台获取新数据并追加渲染
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  // 页面滚动触发事件
+  onPageScroll(e) {
+    console.log(e)
+    this.setData({
+      scrollTop: e.scrollTop
+    })
+  },
+
+  handleShop() {
+    // console.log(1)
+    wx.setTabBarBadge({
+      index: 2,
+      text: '2'
+    })
+  },
+
+  handleTabClick(e) {
+    console.log(e.currentTarget.dataset.id)
+    this.setData({
+      tabActive: e.currentTarget.dataset.id
+    })
+    this.clearCache()
+    this.getDataList(true)
+  },
+  
+  // handleScroll(e) {
+  //   console.log(e.detail)
+  //   this.setData({
+  //     scrollTop: e.detail.scrollTop
+  //   })
+  // },
+
+  // 点击播放视频
+  videoPlay(e){
+    var _index = e.currentTarget.dataset.id
+    this.setData({
+      activeVideoIndex: _index
+    })
+    console.log(this.data.activeVideoIndex)
+
+    //停止正在播放的视频
+    this.videoContext && this.videoContext.stop()
+    setTimeout(() => {
+      //将点击视频进行播放
+      this.videoContext = wx.createVideoContext('myVideo' + this.data.activeVideoIndex)
+      this.videoContext.play()
+    }, 500)
+  },
+
+  changeIndicatorDots() {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
   },
 
   clearCache() {
@@ -178,6 +263,7 @@ Page({
       data: {
         currentPage: isFirst ? 1 : page,
         size: 6,
+        type: this.data.tabActive
         // uniqueName: 'xslw'
       },
       header: {
@@ -210,7 +296,10 @@ Page({
         wx.hideLoading()
       },
       complete: (res)=> {
-        
+        // todo dele
+        // this.setData({
+        //   dataList: [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},]
+        // })
       }
     })
     // wx.request({

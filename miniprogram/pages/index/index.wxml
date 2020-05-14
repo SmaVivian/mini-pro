@@ -3,6 +3,7 @@
 	<!-- <button type="primary" style="display:block;">添加薇团购到我的小程序</button> -->
 
 	<view class="page-body">
+
 		<view class="section section-header-add">
 			<view class="header-add-box">
 				添加薇团购到我的小程序
@@ -55,6 +56,7 @@
 				<text class="group-time ml-10">04:06:04</text>
 			</view>
 
+			<!-- tab切换 -->
 			<view class="section section-types">
 				<view class="types-item mb-10" wx:for="{{typeList}}">
 					<!-- <image src="/images/type-1.jpg" /> -->
@@ -68,10 +70,8 @@
 			</view>
 
 			<view class="section section-tab-list">
-				<view class="tab-name">
-					<text class="active">热卖</text>
-					<text>包邮到家</text>
-					<text>惠享生活</text>
+				<view class="tab-name {{scrollTop > 400 ? 'topnav' : ''}}">
+					<text class="{{tabActive === item.value ? 'active': ''}}" wx:for="{{tabList}}" data-id="{{item.value}}" bindtap="handleTabClick">{{item.text}}</text>
 				</view>
 
 				<!-- <mp-icon type="field" icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}"></mp-icon> -->

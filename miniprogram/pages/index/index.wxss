@@ -112,12 +112,20 @@
   margin: 10rpx 0;
 }
 .section-tab-list .tab-name {
+  width: 100%;
   font-size: 40rpx;
   color: #333;
   background: #f9f9f9;
   line-height: 100rpx;
   display: flex;
   justify-content: space-around;
+}
+.section-tab-list .tab-name.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 3;
 }
 .section-tab-list .tab-name text.active {
   font-weight: bold;

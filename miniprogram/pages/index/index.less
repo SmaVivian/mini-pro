@@ -121,12 +121,20 @@
 
 .section-tab-list {
   .tab-name {
+    width: 100%;
     font-size: @fontTitleBig;
     color: @colorTitle;
     background: @colorGrayBase;
     line-height: 100rpx;
     display: flex;
     justify-content: space-around;
+    &.topnav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #fff;
+      z-index: 3;
+    }
     text {
       &.active {
         font-weight: bold;
