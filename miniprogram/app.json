@@ -4,7 +4,8 @@
     "pages/query/query",
     "pages/picker/picker",
     "pages/shop/shop",
-    "pages/category/category"
+    "pages/category/category",
+    "components/navbar/navbar"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -12,6 +13,7 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "vivi的小程序",
     "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 200
   },

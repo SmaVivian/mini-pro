@@ -1,6 +1,13 @@
 <!--index.wxml-->
 <view class="container">
 	<!-- <button type="primary" style="display:block;">添加薇团购到我的小程序</button> -->
+	<navbar title-text="薇团购" />
+	<!-- <navBar 
+    title-text="自定义导航栏" 
+    back-icon="/images/back@3x.png"
+    home-icon="/images/home_icon@3x.png"
+    background="#f2f2f2"
+    bindback="back"/> -->
 
 	<view class="page-body">
 

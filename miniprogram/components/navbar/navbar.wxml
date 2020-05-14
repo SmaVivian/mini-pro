@@ -1,0 +1,23 @@
+<view class="nav-contain">
+	<view class="nav" style="height: {{status + navHeight}}px">
+		<view class="status" style="height: {{status}}px;{{containerStyle}}" />
+		<view class="navbar" style="height:{{navHeight}}px;{{containerStyle}}">
+			<view class="back-icon" wx:if="{{backIcon}}" bindtap="back">
+				<image src="{{backIcon}}" />
+			</view>
+			<view class="home-icon" wx:if="{{homeIcon}}" bindtap="home">
+				<image src="{{homeIcon}}" />
+			</view>
+			[链接描述][10]
+			<view class="nav-icon" wx:if="{{titleImg}}">
+				<image src="{{titleImg}}" style="{{iconStyle}}" />
+			</view>
+			<view class="nav-title" wx:if="{{titleText && !titleImg}}">
+				<text style="{{textStyle}}">{{titleText}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view style="height: {{status + navHeight}}px;" />
+</view>
+

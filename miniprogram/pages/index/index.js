@@ -180,12 +180,12 @@ Page({
 
   // 页面滚动触发事件
   onPageScroll(e) {
-    console.log(e)
     this.setData({
       scrollTop: e.scrollTop
     })
   },
 
+  // todo dele
   handleShop() {
     // console.log(1)
     wx.setTabBarBadge({
