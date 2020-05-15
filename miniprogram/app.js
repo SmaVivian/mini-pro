@@ -15,6 +15,12 @@ App({
       })
     }
 
-    this.globalData = {}
+    // this.globalData = {}
+  },
+  onShow () {
+
+  },
+  globalData: {                
+    navTotalHeight: '' // 顶部导航栏总高度
   }
 })

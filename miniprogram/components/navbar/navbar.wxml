@@ -2,18 +2,35 @@
 	<view class="nav" style="height: {{status + navHeight}}px">
 		<view class="status" style="height: {{status}}px;{{containerStyle}}" />
 		<view class="navbar" style="height:{{navHeight}}px;{{containerStyle}}">
-			<view class="back-icon" wx:if="{{backIcon}}" bindtap="back">
+			<!-- <view class="back-icon" wx:if="{{backIcon}}" bindtap="back">
 				<image src="{{backIcon}}" />
 			</view>
 			<view class="home-icon" wx:if="{{homeIcon}}" bindtap="home">
 				<image src="{{homeIcon}}" />
-			</view>
-			[链接描述][10]
+			</view> -->
+			<!-- [链接描述][10]
 			<view class="nav-icon" wx:if="{{titleImg}}">
 				<image src="{{titleImg}}" style="{{iconStyle}}" />
-			</view>
-			<view class="nav-title" wx:if="{{titleText && !titleImg}}">
-				<text style="{{textStyle}}">{{titleText}}</text>
+			</view> -->
+			<view class="nav-title-box {{isHome ? 'left' : ''}}">
+				<text class="nav-title" style="{{textStyle}}">{{titleText}}</text>
+				<view class="search" hidden="{{isHome?false:true}}">
+					<input
+					 type="text"
+					 placeholder="输入搜索关键词"
+					 value=""
+					 bindfocus="goSearch"
+					/>
+					<image src="/images/icon/search.svg" />
+					<!-- <input
+					 type="text"
+					 placeholder="输入搜索关键词"
+					 value="{{name}}"
+					 bindinput="bindinput"
+					 bindconfirm="bindconfirm"
+					/>
+					<image src="/images/icon/search.svg" bindtap="goSearch" /> -->
+				</view>
 			</view>
 		</view>
 	</view>

@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "mp-icon": "../../../weui/icon/icon",
     "navbar": "/components/navbar/navbar"

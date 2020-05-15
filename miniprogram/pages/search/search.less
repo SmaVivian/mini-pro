@@ -1,0 +1,108 @@
+@import "../../pages/common/mixin.less";
+
+.head-top {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+.page-body {
+  position: relative;
+}
+.search {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  padding: 20rpx;
+  width: 100%;
+  height: 100rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.search input {
+  display: block;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1rpx solid #e3e3e3;
+  width: 100%;
+  height: 100%;
+  border-radius: 30rpx;
+  padding-left: 32rpx; 
+  font-size: @fontMain;
+}
+.search image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 40rpx;
+  z-index: 2;
+}
+
+.list {
+  .list-item {
+    position: relative;
+    padding: 10rpx;
+    display: flex;
+    background: #fff;
+    margin-bottom: 20rpx;
+    border-radius: 5rpx;
+    .pic {
+      margin-top: 8rpx;
+      width: 280rpx;
+      height: 300rpx;
+    } 
+    .list-item-desc {
+      padding: 0 20rpx;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .it-title {
+        font-size: @fontTitle;
+        font-weight: bold;
+        color: @fontTitle;
+        height: 100rpx;
+      }
+      .it-operate {
+        display: flex;
+        justify-content: space-between;
+        .price-box {
+          display: flex;
+          flex-direction: column;
+          .tag {
+            // text {
+            //   background: @error;
+            //   color: #fff;
+            //   font-size: @fontMini;
+            //   padding: 0 10rpx;
+            //   display: inline-block;
+            //   border-radius: 40rpx;
+            // }
+          }
+          .price {
+            color: @error;
+            font-weight: bold;
+            .pri {
+              font-size: @fontTitle;
+            }
+            .pri-val {
+              font-size: @fontTitleMax;
+            }
+          }
+          .price-old {
+            font-size: @fontMini;
+            color: @colorAssist;
+          }
+        }
+        .count-box {
+          display: flex;
+          align-items: center;
+          .count {
+            color: @colorMain;
+            font-size: @fontMain;
+            // margin: 0 20rpx;
+          }
+        }
+      }
+    }
+  }
+}
