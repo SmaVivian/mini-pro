@@ -1,0 +1,113 @@
+@import "./../common/mixin.less";
+
+.section {
+  background: #fff;
+  margin-top: 10rpx;
+}
+
+.section-header {
+  padding: 20rpx 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .header-l {
+    display: flex;
+    align-items: center;
+    .top-pic {
+      width: 160rpx;
+      height: 160rpx;
+      border-radius: 100%;
+    }
+    .info {
+      margin-left: 20rpx;
+      line-height: 50rpx;
+    }
+    .info-name {
+      font-size: 36rpx;
+    }
+    .info-loc {
+      color: #06ad56;
+    }
+  }
+  .header-r {
+    padding-right: 20rpx;
+    image {
+      width: 50rpx;
+      height: 50rpx;
+    }
+  }
+}
+
+.section-order {
+  .order-title {
+    padding:  20rpx 15rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: @fontMain;
+    color: @fontMain;
+    .title {
+      font-size: @fontTitle;
+      color: @colorTitle;
+    }
+    .btn-view {
+      display: flex;
+      align-items: center;
+      .weui-icon {
+        color: @fontMain;
+      }
+    }
+  }
+  .order-menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    .order-menu-item {
+      padding: 20rpx 0;
+      width: 25%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      image {
+        width: 50rpx;
+        height: 50rpx;
+        margin-bottom: 10rpx;
+      }
+      text {
+        font-size: @fontMain;
+        color: @colorMain;
+      }
+    }
+  }
+}
+
+/* flex重新构建菜单 */
+.com-menu-item {
+  width: 100%;
+  height: 100rpx;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &.line {
+    border-bottom: solid 1px @border;
+  }
+  .label {
+    font-size:34rpx;
+    color:@fontMain;
+    line-height:100rpx;
+  }
+  .r-txt {
+    font-size:32rpx;
+    color:@colorAssist;
+    line-height:100rpx;
+  }
+  button {
+    margin: 0;
+  }
+}

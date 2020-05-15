@@ -1,0 +1,64 @@
+<view class="container">
+	<navbar title-text="我的" color="#388329" />
+
+	<view class="page-body">
+		<view class="section section-header">
+			<view class="header-l">
+				<image class="top-pic" src="{{avatarUrl}}" />
+				<view class="info">
+					<text class="info-name">青春活力</text>
+					<navigator class="info-loc">用户id</navigator>
+				</view>
+			</view>
+
+			<view class="header-r">
+				<image src="/images/icon/search.svg" />
+			</view>
+		</view>
+
+		<view class="section section-order">
+			<view class="order-title">
+				<text class="title">我的订单</text>
+				<navigator class="btn-view" path="/pages/index/index">
+					<text class="mr-5">查看全部</text>
+					<mp-icon icon="arrow" size="{{12}}" />
+				</navigator>
+			</view>
+
+			<view class="order-menu">
+				<view class="order-menu-item">
+					<image src="/images/icon/search.svg" alt="" />
+					<text>待支付</text>
+				</view>
+				<view class="order-menu-item">
+					<image src="/images/icon/search.svg" alt="" />
+					<text>待收货</text>
+				</view>
+				<view class="order-menu-item">
+					<image src="/images/icon/search.svg" alt="" />
+					<text>已完成</text>
+				</view>
+				<view class="order-menu-item">
+					<image src="/images/icon/search.svg" alt="" />
+					<text>已取消</text>
+				</view>
+			</view>
+		</view>
+
+		<navigator wx:if="{{!apiUserInfoMap.base.isSeller}}" url="/pages/fx/apply-status">
+			<view class="com-menu-item mt-20 line">
+				<view class="label">优惠券</view>
+				<mp-icon icon="arrow" color="#999" size="{{12}}" />
+				<!-- <image class="next" src="/images/icon/next.png" /> -->
+			</view>
+		</navigator>
+
+		<navigator wx:if="{{!apiUserInfoMap.base.isSeller}}" url="/pages/select-address/select-address">
+			<view class="com-menu-item">
+				<view class="label">收货地址</view>
+				<mp-icon icon="arrow" color="#999" size="{{12}}" />
+			</view>
+		</navigator>
+	</view>
+</view>
+

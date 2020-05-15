@@ -1,0 +1,35 @@
+<view class="container">
+	<navbar title-text="选择收货地址" color="#388329" />
+
+	<view class="page-body">
+		<view class="address-list">
+			<view class="a-address" wx:for="{{addressList}}" wx:key="id">
+				<view class="left-text" bindtap="selectTap" data-id="{{item.id}}">
+					<view class="name-tel">
+						{{item.linkMan}} {{item.mobile}}
+					</view>
+					<view class="address-box">
+						{{item.address}}
+					</view>
+				</view>
+				<view class="right-edit" bindtap="editAddess" data-id="{{item.id}}">
+					<image src="/images/icon/edit.svg" />
+				</view>
+			</view>
+		</view>
+		<view class="bottom-box" bindtap="addAddess">
+			<view class="add-btn">
+				<image src="/images/add-addr.png" />
+				<view>新增收货地址</view>
+			</view>
+			<mp-icon
+			 class="next"
+			 icon="arrow"
+			 color="#999"
+			 size="{{12}}"
+			/>
+			<!-- <image class="next" src="/images/icon/next.png" /> -->
+		</view>
+	</view>
+</view>
+

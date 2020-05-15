@@ -6,7 +6,10 @@
     "pages/shop/shop",
     "pages/category/category",
     "components/navbar/navbar",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/my/my",
+    "pages/select-address/select-address",
+    "pages/address-add/address-add"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -42,7 +45,7 @@
         "text": "购物车"
       },
       {
-        "pagePath": "pages/picker/picker",
+        "pagePath": "pages/my/my",
         "iconPath": "images/icon-bar-4.png",
         "selectedIconPath": "images/icon-bar-4-active.png",
         "text": "我的"
@@ -51,6 +54,7 @@
   },
   "style": "v2",
   "usingComponents": {
+    "mp-icon": "/weui/icon/icon",
     "navbar": "/components/navbar/navbar"
   },
   "sitemapLocation": "sitemap65.json"

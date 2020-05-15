@@ -1,0 +1,112 @@
+.m-shadow {
+  box-shadow: 0px 3px 10px 0px rgba(173, 179, 191, 0.3);
+}
+.m-gradient {
+  background: linear-gradient(#007aff, #0063ce);
+}
+.section {
+  background: #fff;
+  margin-top: 10rpx;
+}
+.section-header {
+  padding: 20rpx 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-header .header-l {
+  display: flex;
+  align-items: center;
+}
+.section-header .header-l .top-pic {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 100%;
+}
+.section-header .header-l .info {
+  margin-left: 20rpx;
+  line-height: 50rpx;
+}
+.section-header .header-l .info-name {
+  font-size: 36rpx;
+}
+.section-header .header-l .info-loc {
+  color: #06ad56;
+}
+.section-header .header-r {
+  padding-right: 20rpx;
+}
+.section-header .header-r image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.section-order .order-title {
+  padding: 20rpx 15rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: 28rpx;
+}
+.section-order .order-title .title {
+  font-size: 32rpx;
+  color: #333;
+}
+.section-order .order-title .btn-view {
+  display: flex;
+  align-items: center;
+}
+.section-order .order-title .btn-view .weui-icon {
+  color: 28rpx;
+}
+.section-order .order-menu {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.section-order .order-menu .order-menu-item {
+  padding: 20rpx 0;
+  width: 25%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-order .order-menu .order-menu-item image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}
+.section-order .order-menu .order-menu-item text {
+  font-size: 28rpx;
+  color: #666;
+}
+/* flex重新构建菜单 */
+.com-menu-item {
+  width: 100%;
+  height: 100rpx;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.com-menu-item.line {
+  border-bottom: solid 1px #eeeeee;
+}
+.com-menu-item .label {
+  font-size: 34rpx;
+  color: 28rpx;
+  line-height: 100rpx;
+}
+.com-menu-item .r-txt {
+  font-size: 32rpx;
+  color: #999;
+  line-height: 100rpx;
+}
+.com-menu-item button {
+  margin: 0;
+}
