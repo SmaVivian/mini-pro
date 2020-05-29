@@ -289,21 +289,18 @@ Page({
     wx.showLoading({
       "mask": true
     })
-    wx.request({
-      url: 'http://bjmuseum.org.cn/admin/article/getArticleListByUniqueType.do', //仅为示例，并非真实的接口地址
-      // url: 'http://wx.tj720.com/admin/AppointOrder/museumList.do', //仅为示例，并非真实的接口地址
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getHomeList',
+      // 传给云函数的参数
       data: {
         currentPage: isFirst ? 1 : page,
-        size: 6,
-        // type: this.data.tabActive
-        uniqueName: 'xslw'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
+        size: 2,
       },
       success: (res) => {
+        console.log(res)
         wx.hideLoading()
-        res = res.data
+        res = res.result
         if (res.success == 1) {//成功
           // 这一步实现了上拉加载更多
           this.setData({
@@ -321,30 +318,58 @@ Page({
             })
           }
         } else {//失败
-            console.log(res)
+          console.log(res)
         }
       },
-      fail: (res) => {
+      fail: (error) => {
         wx.hideLoading()
-      },
-      complete: (res)=> {
-        // todo dele
-        // this.setData({
-        //   dataList: [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},]
-        // })
+        console.log(error)
       }
+      // fail: console.error
     })
     // wx.request({
-    //   url: 'http://wx.tj720.com/admin/AppointOrder/areaList.do', //仅为示例，并非真实的接口地址
+    //   url: 'http://bjmuseum.org.cn/admin/article/getArticleListByUniqueType.do', //仅为示例，并非真实的接口地址
+    //   // url: 'http://wx.tj720.com/admin/AppointOrder/museumList.do', //仅为示例，并非真实的接口地址
     //   data: {
-    //     x: '',
-    //     y: ''
+    //     currentPage: isFirst ? 1 : page,
+    //     size: 6,
+    //     // type: this.data.tabActive
+    //     uniqueName: 'xslw'
     //   },
     //   header: {
     //     'content-type': 'application/json' // 默认值
     //   },
-    //   success (res) {
-    //     console.log(12,res.data)
+    //   success: (res) => {
+    //     wx.hideLoading()
+    //     res = res.data
+    //     if (res.success == 1) {//成功
+    //       // 这一步实现了上拉加载更多
+    //       this.setData({
+    //         dataList: this.data.dataList.concat(res.data)
+    //       })
+    //       console.log(123,this.data.dataList)
+    //       if(page <= res.page.totalPage) {
+    //         page++
+    //         this.setData({
+    //           isTotal: false
+    //         })
+    //       } else {
+    //         this.setData({
+    //           isTotal: true
+    //         })
+    //       }
+    //     } else {//失败
+    //         console.log(res)
+    //     }
+    //   },
+    //   fail: (res) => {
+    //     wx.hideLoading()
+    //   },
+    //   complete: (res)=> {
+    //     // todo dele
+    //     // this.setData({
+    //     //   dataList: [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},]
+    //     // })
     //   }
     // })
   },
