@@ -18,6 +18,8 @@
 			</view>
 		</view>
 
+		<view bindtap="handleMyFunc">我的云函数</view>
+
 		<view class="section section-header-banner">
 			<view class="left">
 				<image class="top-pic" src="{{avatarUrl}}" />
@@ -132,8 +134,11 @@
 										<text class="price-old">¥3.99</text>
 									</view>
 									<view class="count-box">
+										<text>减</text>
 										<!-- <button>-</button> -->
-										<text class="count" bindtap="handleShop">{{index+1}}</text>
+										<text class="count">{{index+1}}</text>
+										<!-- <text class="count" bindtap="handleShop">{{index+1}}</text> -->
+										<text>加</text>
 										<!-- <button>+</button> -->
 									</view>
 								</view>

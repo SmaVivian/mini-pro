@@ -202,6 +202,22 @@ Page({
     this.clearCache()
     this.getDataList(true)
   },
+
+  handleMyFunc() {
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'add',
+      // 传给云函数的参数
+      data: {
+        a: 1,
+        b: 2,
+      },
+      success: function(res) {
+        console.log(res.result.sum) // 3
+      },
+      fail: console.error
+    })
+  },
   
   // handleScroll(e) {
   //   console.log(e.detail)
@@ -258,13 +274,13 @@ Page({
       "mask": true
     })
     wx.request({
-      // url: 'http://bjmuseum.org.cn/admin/article/getArticleListByUniqueType.do', //仅为示例，并非真实的接口地址
-      url: 'http://wx.tj720.com/admin/AppointOrder/museumList.do', //仅为示例，并非真实的接口地址
+      url: 'http://bjmuseum.org.cn/admin/article/getArticleListByUniqueType.do', //仅为示例，并非真实的接口地址
+      // url: 'http://wx.tj720.com/admin/AppointOrder/museumList.do', //仅为示例，并非真实的接口地址
       data: {
         currentPage: isFirst ? 1 : page,
         size: 6,
-        type: this.data.tabActive
-        // uniqueName: 'xslw'
+        // type: this.data.tabActive
+        uniqueName: 'xslw'
       },
       header: {
         'content-type': 'application/json' // 默认值
