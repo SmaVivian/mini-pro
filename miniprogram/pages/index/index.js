@@ -218,6 +218,22 @@ Page({
       fail: console.error
     })
   },
+
+  handleMyFunc1() {
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getHomeList',
+      // 传给云函数的参数
+      data: {
+        currentPage: 2,
+        size: 2,
+      },
+      success: function(res) {
+        console.log(res.result) // 3
+      },
+      fail: console.error
+    })
+  },
   
   // handleScroll(e) {
   //   console.log(e.detail)

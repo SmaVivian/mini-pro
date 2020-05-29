@@ -19,6 +19,7 @@
 		</view>
 
 		<view bindtap="handleMyFunc">我的云函数</view>
+		<view bindtap="handleMyFunc1">我的数据库及云函数</view>
 
 		<view class="section section-header-banner">
 			<view class="left">

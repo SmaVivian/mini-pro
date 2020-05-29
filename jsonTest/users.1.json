@@ -1,0 +1,23 @@
+{
+  "nickName": "张张",
+  "avatarUrl": "",
+  "phone": "15333333333",
+  "cartIdArr": [
+    {
+      "id": "",
+      "num": ""
+    }
+  ]
+}
+{
+  "nickName": "周周",
+  "avatarUrl": "",
+  "phone": "15333333333",
+  "address": "湖北省武汉市",
+  "cartIdArr": [
+    {
+      "id": "",
+      "num": ""
+    }
+  ]
+}

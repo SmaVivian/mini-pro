@@ -1,0 +1,25 @@
+{
+  "_id": "EdSIyqaMybTAOhz9tgYGJoxZHPtCTO7Tkj35V0cY5f9TBvzE",
+  "nickName": "张张",
+  "avatarUrl": "",
+  "phone": "15333333333",
+  "cartIdArr": [
+    {
+      "id": "",
+      "num": ""
+    }
+  ]
+}
+{
+  "_id": "K3fINOlVgSQgp1trPkpyOPo1TNx7I9DRXs2jPZBnBDew4xQX",
+  "nickName": "周周",
+  "avatarUrl": "",
+  "phone": "15333333333",
+  "address": "湖北省武汉市",
+  "cartIdArr": [
+    {
+      "id": "",
+      "num": ""
+    }
+  ]
+}
