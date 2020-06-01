@@ -8,19 +8,28 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   // 分页
   const countRes = await db.collection('goods').count()
-  const toatl = countRes.total
+  const total = countRes.total
 
   let resData = {}
   await db.collection('goods').skip((event.currentPage-1) * event.size).limit(event.size).get().then(res => {
-    // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
-    console.log(parseInt(toatl / event.size) + (toatl % event.size > 0 ? 1 : 0))
+    console.log(parseInt(total / event.size) + (total % event.size > 0 ? 1 : 0))
+    // 未成功
+    // const aaa = await cloud.callFunction({
+    //   name: 'tools',
+    //   data: {
+    //     total: total,
+    //     currentPage: event.currentPage,
+    //     size: event.size
+    //   }
+    // })
+    // console.log(333, aaa)
     resData = {
       data: res.data,
       page: {
-        allRow: toatl,
+        allRow: total,
         currentPage: event.currentPage,
         size: event.size,
-        totalPage: parseInt(toatl / event.size) + (toatl % event.size > 0 ? 1 : 0)
+        totalPage: parseInt(total / event.size) + (total % event.size > 0 ? 1 : 0)
       },
       success: 1
     }
