@@ -1,13 +1,16 @@
 <view class="container">
 	<navbar title-text="我的" color="#388329" />
 
+	<import src="/template/login/index.wxml" />
+	<template is="apifmLogin" data="{{wxlogin: wxlogin, userInfo: userInfo, isAuthorized: isAuthorized}}" />
+
 	<view class="page-body">
 		<view class="section section-header">
 			<view class="header-l">
 				<image class="top-pic" src="{{avatarUrl}}" />
 				<view class="info">
-					<text class="info-name">青春活力</text>
-					<navigator class="info-loc">用户id</navigator>
+					<text class="info-name">{{userInfo.nickName}}</text>
+					<navigator class="info-loc">{{userInfo.city}}</navigator>
 				</view>
 			</view>
 
