@@ -33,7 +33,7 @@
 				 open-type="getUserInfo"
 				 bindgetuserinfo="bindGetUserInfoNew"
 				>
-					授权微信登录
+					微信授权登录登录
 				</button>
 				<!-- <button
 				 wx:if="{{userInfo.nickName}}"
