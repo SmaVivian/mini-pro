@@ -21,7 +21,8 @@ exports.main = async (event, context) => {
         db.collection('users').add({
           data: {
             _openid: OPENID,
-            ...event.userInfo
+            ...event.userInfo,
+            cartIdArr: [] // 默认购物车商品id集合为空数组
           }
         })
         // .then(res => {
