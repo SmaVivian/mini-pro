@@ -50,7 +50,7 @@
 				<view class="total" hidden="{{noSelect}}">合计：¥ {{price}}</view>
 			</view>
 			<view class="to-pay-btn">
-				<navigator url="/pages/to-pay-order/index">去结算</navigator>
+				<navigator url="/pages/to-pay-order/to-pay-order">去结算</navigator>
 			</view>
 		</view>
 	</view>
