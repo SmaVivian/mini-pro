@@ -1,2 +1,58 @@
 <!--miniprogram/pages/shop/shop.wxml-->
-<text>miniprogram/pages/shop/shop.wxml</text>
+<view class="container">
+	<!-- <button type="primary" style="display:block;">添加薇团购到我的小程序</button> -->
+	<navbar title-text="购物车" color="#388329" />
+	<!-- <navBar 
+    title-text="自定义导航栏" 
+    back-icon="/images/back@3x.png"
+    home-icon="/images/home_icon@3x.png"
+    background="#f2f2f2"
+    bindback="back"/> -->
+
+	<view class="page-body">
+		<view class="list-cart">
+			<view class="item" wx:for="{{dataList}}">
+				<image class="top-pic" src="/images/type-1.jpg" />
+				<view class="cont">
+					<view class="info">
+						<view class="name">{{item.goods.name}}</view>
+						<view class="price">¥{{item.goods.price}}</view>
+						<image class="btn-dele" src="/images/type-1.jpg" />
+					</view>
+					<view class="count-box">
+						<view
+						 class="btn-sub {{item.num == 1 ? 'disabled': ''}}"
+						 data-type="2"
+						 data-id="{{item.goodsId}}"
+						 bindtap="handleShop"
+						>-
+						</view>
+						<input
+						 type="number"
+						 value="{{item.num}}"
+						 data-id="{{item.goodsId}}"
+						 bindblur="changeCarNumber"
+						/>
+						<view
+						 class="btn-add {{item.num == 9 ? 'disabled': ''}}"
+						 data-type="1"
+						 data-id="{{item.goodsId}}"
+						 bindtap="handleShop"
+						>+
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="jiesuan-box">
+			<view class="left-price">
+				<view class="total" hidden="{{noSelect}}">合计：¥ {{price}}</view>
+			</view>
+			<view class="to-pay-btn">
+				<navigator url="/pages/to-pay-order/index">去结算</navigator>
+			</view>
+		</view>
+	</view>
+</view>
+
