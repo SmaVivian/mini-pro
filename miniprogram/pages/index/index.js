@@ -186,12 +186,40 @@ Page({
   },
 
   // todo dele
-  handleShop() {
-    // console.log(1)
-    wx.setTabBarBadge({
-      index: 2,
-      text: '2'
+  handleShop(e) {
+    console.log(e.currentTarget.dataset.type)
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'cart-add',
+      // 传给云函数的参数
+      data: {
+        type: e.currentTarget.dataset.type,  // 1 加  2 减
+        goodsId: e.currentTarget.dataset.id
+      },
+      success: (res) => {
+        res = res.result
+        if(res.success) {
+          wx.showToast({
+            icon: 'none',
+            title: '操作购物车成功',
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '操作购物车失败',
+          })
+        }
+      },
+      fail: (error) => {
+        console.log(error)
+      }
+      // fail: console.error
     })
+    // console.log(1)
+    // wx.setTabBarBadge({
+    //   index: 2,
+    //   text: '2'
+    // })
   },
 
   handleTabClick(e) {
